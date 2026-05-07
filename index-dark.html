@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark Clifton Homes | Custom Luxury Home Builder | Dallas, Texas</title>
+  <meta name="description" content="Mark Clifton Homes — luxury custom home builder serving Dallas's most distinguished communities including Park Cities, Preston Hollow, Bluffview, and more. Over 100 completed projects.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & ROOT ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #080807;
+      --bg-2:         #101010;
+      --bg-3:         #161412;
+      --gold:         #c8a96b;
+      --gold-light:   #e6d3a8;
+      --gold-dim:     #9a7c42;
+      --white:        #f4f1eb;
+      --muted:        #9e9080;
+      --border:       rgba(200,169,107,0.14);
+      --border-light: rgba(200,169,107,0.28);
+      --serif:  'Cormorant Garamond', Georgia, serif;
+      --sans:   'Montserrat', system-ui, sans-serif;
+      --ease:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); }
+
+    img { display: block; max-width: 100%; }
+
+    /* ===== UTILITY ===== */
+    .container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 22px;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5.2vw, 68px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .gold-rule {
+      width: 52px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px auto 0;
+    }
+
+    .centered { text-align: center; }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 15px 40px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.38);
+      padding: 15px 40px;
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ===== NAVIGATION ===== */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 900;
+      padding: 28px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding 0.45s var(--ease), background 0.45s var(--ease), border-color 0.45s var(--ease);
+      border-bottom: 1px solid transparent;
+    }
+
+    #nav.solid {
+      padding: 16px 60px;
+      background: rgba(8,8,7,0.96);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-color: var(--border);
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--white);
+      text-decoration: none;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .nav-logo {
+      height: 38px;
+      width: auto;
+      flex-shrink: 0;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.92);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s var(--ease);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 10px 26px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--bg); }
+
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--white);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,8,7,0.98);
+      z-index: 800;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .mobile-drawer a:hover { color: var(--gold); }
+
+    /* ===== HERO ===== */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-veil {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        170deg,
+        rgba(4,4,3,0.42) 0%,
+        rgba(4,4,3,0.52) 45%,
+        rgba(4,4,3,0.82) 100%
+      );
+    }
+
+    .hero-body {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 30px;
+      max-width: 940px;
+    }
+
+    .hero-kicker {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.46em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.9s 0.3s var(--ease) forwards;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(60px, 9.5vw, 128px);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s 0.6s var(--ease) forwards;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(10px, 1.3vw, 12px);
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.80);
+      margin-bottom: 56px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.9s 0.9s var(--ease) forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.9s 1.1s var(--ease) forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-scroll-cue {
+      position: absolute;
+      bottom: 38px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      animation: fadeUp 1s 1.6s var(--ease) forwards;
+    }
+
+    .hero-scroll-cue span {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.4);
+    }
+
+    .scroll-ticker {
+      width: 1px;
+      height: 56px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+      animation: ticker 2.2s ease-in-out infinite;
+    }
+
+    @keyframes ticker {
+      0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+      45%  { opacity: 1; transform: scaleY(1); transform-origin: top; }
+      75%  { opacity: 1; transform: scaleY(1); transform-origin: bottom; }
+      100% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ===== STATS BAND ===== */
+    #stats {
+      background: var(--bg-3);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-cell {
+      padding: 52px 40px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-cell:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: clamp(44px, 6vw, 76px);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      display: block;
+    }
+
+    .stat-lbl {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-top: 12px;
+    }
+
+    /* ===== ABOUT ===== */
+    #about {
+      padding: 150px 0;
+      background: var(--bg);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 96px;
+      align-items: center;
+    }
+
+    .about-img-frame {
+      position: relative;
+    }
+
+    .about-img-frame::before {
+      content: '';
+      position: absolute;
+      top: -22px;
+      left: -22px;
+      right: 22px;
+      bottom: 22px;
+      border: 1px solid var(--border-light);
+      pointer-events: none;
+    }
+
+    .about-photo {
+      position: relative;
+      width: 100%;
+      height: 680px;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .about-copy .eyebrow { text-align: left; }
+    .about-copy .section-heading { text-align: left; }
+
+    .about-body {
+      margin-top: 34px;
+      font-size: 15px;
+      color: rgba(244,241,235,0.85);
+      line-height: 1.95;
+    }
+    .about-body p + p { margin-top: 18px; }
+
+    .about-creds {
+      display: flex;
+      gap: 0;
+      margin-top: 48px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cred-block {
+      flex: 1;
+      padding-right: 32px;
+    }
+    .cred-block + .cred-block {
+      padding-left: 32px;
+      border-left: 1px solid var(--border);
+      padding-right: 0;
+    }
+
+    .cred-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .cred-value {
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--white);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* ===== SERVICES ===== */
+    #services {
+      padding: 120px 0;
+      background: var(--bg-2);
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 76px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border);
+      background: var(--border);
+      gap: 1px;
+    }
+
+    .service-tile {
+      background: var(--bg-2);
+      padding: 62px 52px;
+      text-align: center;
+      transition: background 0.35s;
+    }
+    .service-tile:hover { background: var(--bg-3); }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      color: var(--gold);
+    }
+
+    .service-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+    .service-name {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    /* ===== GALLERY ===== */
+    #gallery {
+      padding: 140px 0;
+      background: var(--bg);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .gallery-mosaic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 300px;
+      gap: 14px;
+    }
+
+    /* Span rules for visual variety */
+    .gp-wide { grid-column: span 2; }
+    .gp-tall { grid-row: span 2; }
+
+    .gp {
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .gp img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s var(--ease);
+    }
+
+    .gp:hover img { transform: scale(1.06); }
+
+    .gp-veil {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px 22px;
+    }
+
+    .gp:hover .gp-veil { opacity: 1; }
+
+    .gp-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* Gallery lightbox overlay */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(4,4,3,0.96);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    #lightbox.active { display: flex; }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    #lb-close {
+      position: absolute;
+      top: 28px;
+      right: 36px;
+      font-size: 28px;
+      color: var(--white);
+      cursor: pointer;
+      background: none;
+      border: none;
+      opacity: 0.6;
+      line-height: 1;
+      transition: opacity 0.2s;
+    }
+    #lb-close:hover { opacity: 1; }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials {
+      position: relative;
+      padding: 140px 0;
+      overflow: hidden;
+    }
+
+    #testimonials-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .test-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(6,5,4,0.90);
+    }
+
+    .test-content { position: relative; z-index: 2; }
+
+    .test-header {
+      text-align: center;
+      margin-bottom: 76px;
+    }
+
+    /* ---- Infinite scroll ticker ---- */
+    .test-ticker-wrap {
+      overflow: hidden;
+      padding: 12px 0;
+      cursor: default;
+      /* fade edges */
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .test-ticker {
+      display: flex;
+      width: max-content;
+      gap: 28px;
+      animation: tickerRoll 80s linear infinite;
+    }
+
+    .test-ticker:hover { animation-play-state: paused; }
+
+    @keyframes tickerRoll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .test-card {
+      flex: 0 0 460px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 46px 40px;
+      position: relative;
+    }
+
+    .test-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 18px;
+      left: 30px;
+      font-family: var(--serif);
+      font-size: 90px;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.22;
+    }
+
+    .test-quote {
+      font-family: var(--serif);
+      font-size: 16.5px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(244,241,235,0.94);
+      line-height: 1.82;
+      margin-bottom: 30px;
+      padding-top: 18px;
+    }
+
+    .test-byline {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .test-rule {
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .test-name {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* ===== COMMUNITIES ===== */
+    #communities {
+      padding: 90px 0;
+      background: var(--bg-3);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .comm-kicker {
+      display: block;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.44em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 44px;
+    }
+
+    .comm-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .comm-item {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.8vw, 36px);
+      font-weight: 300;
+      color: rgba(244,241,235,0.62);
+      padding: 10px 44px;
+      border-right: 1px solid var(--border);
+      letter-spacing: 0.04em;
+      transition: color 0.3s;
+      cursor: default;
+    }
+    .comm-item:last-child { border-right: none; }
+    .comm-item:hover { color: var(--gold-light); }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      padding: 150px 0;
+      background: var(--bg);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .contact-info .eyebrow { text-align: left; }
+    .contact-info .section-heading { text-align: left; margin-bottom: 36px; }
+
+    .contact-blurb {
+      font-size: 14px;
+      color: rgba(244,241,235,0.78);
+      line-height: 1.95;
+      margin-bottom: 52px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .ci-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+    .ci-icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+    .ci-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .ci-value {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--white);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .ci-value a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .ci-value a:hover { color: var(--gold); }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 18px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+    .field { display: flex; flex-direction: column; gap: 7px; }
+
+    .field label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color 0.3s;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder { color: rgba(255,255,255,0.18); }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus { border-color: var(--gold); }
+
+    .field select option { background: #1a1814; }
+
+    .field textarea { resize: vertical; min-height: 130px; }
+
+    .form-submit {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      border: none;
+      padding: 16px 48px;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: 6px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bg-3);
+      border-top: 1px solid var(--border);
+      padding: 90px 0 44px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 56px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .footer-brand-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      color: var(--white);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 290px;
+      margin-bottom: 30px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .social-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    .footer-col h5 {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .footer-col ul li a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+      letter-spacing: 0.04em;
+    }
+    .footer-col ul li a:hover { color: var(--gold-light); }
+
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-award {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .container { padding: 0 40px; }
+      #nav, #nav.solid { padding-left: 40px; padding-right: 40px; }
+      .about-grid, .contact-grid { gap: 56px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 860px) {
+      .container { padding: 0 24px; }
+      #nav, #nav.solid { padding-left: 24px; padding-right: 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-burger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-frame::before { display: none; }
+      .about-photo { height: 480px; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell:nth-child(2) { border-right: none; }
+      .stat-cell:nth-child(3) { border-top: 1px solid var(--border); }
+      .stat-cell:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 240px;
+      }
+      .gp-wide { grid-column: span 2; }
+      .gp-tall { grid-row: span 1; }
+      .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .comm-list { flex-direction: column; align-items: center; }
+      .comm-item { border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
+    }
+
+    @media (max-width: 520px) {
+      .hero-title { font-size: 52px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .gallery-mosaic {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 280px;
+      }
+      .gp-wide { grid-column: span 1; }
+      .about-photo { height: 360px; }
+      .test-card { flex: 0 0 320px; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       MOBILE DRAWER
+  =============================== -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <img src="__originals/logo.png" alt="Mark Clifton Homes" style="height:64px;width:auto;border-radius:50%;margin-bottom:8px;">
+    <a href="#home"         onclick="closeDrawer()">Home</a>
+    <a href="#about"        onclick="closeDrawer()">About</a>
+    <a href="#gallery"      onclick="closeDrawer()">Gallery</a>
+    <a href="#testimonials" onclick="closeDrawer()">Testimonials</a>
+    <a href="#contact"      onclick="closeDrawer()">Contact</a>
+  </div>
+
+  <!-- ==============================
+       NAVIGATION
+  =============================== -->
+  <nav id="nav">
+    <a href="#home" class="nav-brand">
+      <img src="__originals/logo.png" alt="MCH Logo" class="nav-logo">
+      MARK CLIFTON HOMES
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Consultation</a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ==============================
+       HERO
+  =============================== -->
+  <section id="home">
+    <div id="hero">
+      <video id="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="__originals/480p/mp4/file.mp4" type="video/mp4">
+      </video>
+      <div class="hero-veil"></div>
+      <div class="hero-body">
+        <span class="hero-kicker">Dallas, Texas &nbsp;·&nbsp; Est. Since the 1990s</span>
+        <h1 class="hero-title">Mark Clifton<br><em>Homes</em></h1>
+        <p class="hero-sub">Custom Defined &nbsp;·&nbsp; Uncommonly Crafted &nbsp;·&nbsp; Legacy of Quality</p>
+        <div class="hero-actions">
+          <a href="#gallery"  class="btn-primary">View Our Work</a>
+          <a href="#contact"  class="btn-outline">Request Consultation</a>
+        </div>
+      </div>
+      <div class="hero-scroll-cue">
+        <span>Scroll</span>
+        <div class="scroll-ticker"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       STATS BAND
+  =============================== -->
+  <div id="stats">
+    <div class="stats-row">
+      <div class="stat-cell" data-aos="fade-up" data-aos-delay="0">
+        <span class="stat-num">100<small style="font-size:0.55em">+</small></span>
+        <span class="stat-lbl">Completed Projects</span>
+      </div>
+      <div class="stat-cell" data-aos="fade-up" data-aos-delay="80">
+        <span class="stat-num">15<small style="font-size:0.55em">+</small></span>
+        <span class="stat-lbl">Years Best Builder Award</span>
+      </div>
+      <div class="stat-cell" data-aos="fade-up" data-aos-delay="160">
+        <img
+          src="__originals/DHomelogo.jpg"
+          alt="D Home Magazine Best Builder"
+          style="height:48px;width:auto;display:block;margin:0 auto 4px;background:#fff;padding:6px 12px;border-radius:4px;"
+        >
+        <span class="stat-lbl">Best Builder Award</span>
+      </div>
+      <div class="stat-cell" data-aos="fade-up" data-aos-delay="240">
+        <span class="stat-num">CGB</span>
+        <span class="stat-lbl">NAHB Certified Graduate Builder</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       ABOUT
+  =============================== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-img-frame" data-aos="fade-right">
+          <img
+            class="about-photo"
+            src="__originals/5e6802_50c1908022c047658ae7d0f0247837e3~mv2_d_4822_4822_s_4_2.jpg"
+            alt="Mark Clifton, Certified Graduate Builder"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="about-copy" data-aos="fade-left" data-aos-delay="130">
+          <span class="eyebrow">About Mark Clifton</span>
+          <h2 class="section-heading">Uncommon<br><em>Craftsmanship</em></h2>
+          <div class="about-body">
+            <p>Mark Clifton is a Certified Graduate Builder (CGB) and Certified Graduate Professional (CGP) through the National Association of Home Builders — bringing decades of experience to every project he touches.</p>
+            <p>Our individualized approach renders an uncommon result. Each project is unique, and our work is tailored to create a product that is beyond comparison. We specialize in new construction, renovation, and commercial projects.</p>
+            <p>Mark proudly serves the most distinguished communities of Dallas, including the Park Cities, Preston Hollow, Bluffview, Devonshire, Uptown, and Turtle Creek — with a legacy resting in consistent, exceptional results across over 100 completed projects.</p>
+          </div>
+          <div class="about-creds">
+            <div class="cred-block">
+              <span class="cred-label">Certification</span>
+              <span class="cred-value">NAHB Certified<br>Graduate Builder · CGP</span>
+            </div>
+            <div class="cred-block">
+              <span class="cred-label">Recognition</span>
+              <span class="cred-value">Best Builder<br>2010 — 2025</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICES
+  =============================== -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header" data-aos="fade-up">
+        <span class="eyebrow">What We Build</span>
+        <h2 class="section-heading">Our <em>Expertise</em></h2>
+        <div class="gold-rule"></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-tile" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="service-name">New Construction</h3>
+          <p class="service-desc">Custom luxury homes designed and built from the ground up, tailored specifically to the vision and lifestyle of each client.</p>
+        </div>
+        <div class="service-tile" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="service-name">Renovation</h3>
+          <p class="service-desc">Thoughtful renovations that honor existing architecture while elevating interiors and exteriors to a modern luxury standard.</p>
+        </div>
+        <div class="service-tile" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3 class="service-name">Commercial</h3>
+          <p class="service-desc">Commercial projects executed with the same exceptional detail and uncommon craftsmanship that defines every Mark Clifton build.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       GALLERY
+  =============================== -->
+  <section id="gallery">
+    <div class="container">
+      <div class="gallery-header" data-aos="fade-up">
+        <span class="eyebrow">Portfolio</span>
+        <h2 class="section-heading">A <em>Legacy</em> of Quality</h2>
+        <div class="gold-rule"></div>
+      </div>
+      <div class="gallery-mosaic">
+
+        <!-- Row 1 -->
+        <div class="gp gp-wide gp-tall" data-aos="fade-up" data-aos-delay="0">
+          <img src="__originals/5e6802_4b8425f158334820a44edaade4f62840~mv2_d_4893_3495_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+        <div class="gp" data-aos="fade-up" data-aos-delay="60">
+          <img src="__originals/5e6802_94bd13d4cffa47f78b0b7892dff88f24~mv2_d_4605_4605_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+        <div class="gp" data-aos="fade-up" data-aos-delay="120">
+          <img src="__originals/5e6802_95fe641dfc884bfd80b072c78bbbec0a~mv2_d_4883_4883_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+
+        <!-- Row 2 — first two cells filled by tall span above -->
+        <div class="gp" data-aos="fade-up" data-aos-delay="60">
+          <img src="__originals/5e6802_6f950102ad65459bb40f597f5e4974c8~mv2_d_4871_3479_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+        <div class="gp" data-aos="fade-up" data-aos-delay="120">
+          <img src="__originals/5e6802_7a8624b937a1423e994a9b5bce92623a~mv2_d_4537_5671_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="gp" data-aos="fade-up" data-aos-delay="0">
+          <img src="__originals/5e6802_2b107549e4744c2cb8c71a30de9701db~mv2_d_4465_6251_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+        <div class="gp gp-wide" data-aos="fade-up" data-aos-delay="60">
+          <img src="__originals/5e6802_bc3f83557ad44082b00a433f78ac93f5~mv2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+        <div class="gp" data-aos="fade-up" data-aos-delay="120">
+          <img src="__originals/5e6802_31d670ca11c940e5a075db393affd7fb~mv2_d_4912_7360_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="gp gp-tall" data-aos="fade-up" data-aos-delay="0">
+          <img src="__originals/5e6802_fb521895860842e984e01e64f67c43af~mv2_d_4825_6031_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+        <div class="gp" data-aos="fade-up" data-aos-delay="60">
+          <img src="__originals/5e6802_6bfc69e89fe54247a6bfa87fe5c4c08e~mv2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+        <div class="gp" data-aos="fade-up" data-aos-delay="120">
+          <img src="__originals/5e6802_b4a6ea76ef994303920752c1a1f0e21f~mv2_d_3527_4290_s_4_2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+        <div class="gp gp-wide" data-aos="fade-up" data-aos-delay="180">
+          <img src="__originals/5e6802_f3d9cff778a74f5fb124c9abc4788b69~mv2.jpg" alt="Luxury Home" loading="lazy">
+          <div class="gp-veil"><span class="gp-label">View</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       LIGHTBOX
+  =============================== -->
+  <div id="lightbox">
+    <button id="lb-close" aria-label="Close">&#x2715;</button>
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <!-- ==============================
+       TESTIMONIALS
+  =============================== -->
+  <section id="testimonials">
+    <video id="testimonials-bg" autoplay muted loop playsinline preload="none">
+      <source src="__originals/480p/mp4/file.mp4" type="video/mp4">
+    </video>
+    <div class="test-overlay"></div>
+    <div class="test-content">
+      <div class="container">
+        <div class="test-header" data-aos="fade-up">
+          <span class="eyebrow">Client Stories</span>
+          <h2 class="section-heading">What Our <em>Clients</em> Say</h2>
+          <div class="gold-rule"></div>
+        </div>
+      </div>
+
+      <!-- Infinite scrolling ticker — cards duplicated for seamless loop -->
+      <div class="test-ticker-wrap">
+        <div class="test-ticker">
+
+          <!-- ===== Set A ===== -->
+          <div class="test-card">
+            <p class="test-quote">"Mark has now built two houses and four townhouses for us… Everything runs smoothly, on time, and on budget… we were extremely satisfied with his work."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Sharon &amp; Jimmy Gallivan</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"Mark is incredibly professional, provides excellent customer service and a quality product. He is a trustworthy and patient individual and proved it many times throughout the process of building my home."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Ali &amp; Dan Greenwood</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"In the 20 years I have operated my architectural practice, it has become clear to me that the most important aspect of a quality project, outside of an open-minded client, is the builder."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Clay Nelson, C.A. Nelson Architecture Group</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"We made a great choice with Mark Clifton to build our home! He kept things on budget and on time, which was key. And he consulted closely with us each step of the way."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Tom &amp; Dianna Bowen</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"He worked with our architect and us to bring our vision to life and deserves most of the credit for our beautiful house, which D Magazine selected as one of the ten most beautiful homes in Dallas."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Jim &amp; Emmalee Mutrie</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"Mark and his team built our home with superior craftsmanship and exhibited the highest level of integrity in everything they did. He completed our project on time, on budget, and with craftsmanship that exceeded all expectations."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Lori &amp; Brian Pinto</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"We have had the distinct pleasure of working with Mark Clifton on several home projects over the last 5 years. From the beginning, Mark was very focused on detail and budget. His quality of work is excellent."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Patty &amp; James Huffines</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"Beth Ann and I had a fantastic experience with Mark Clifton on our remodel. He delivered on a very tight timeline and the quality was such that it won the ARC Award for 'Remodel of the Year' by DHome magazine!"</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Russell &amp; Beth Ann Huber</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"We had nothing but a positive and pleasant experience throughout the entire building process. Mark Clifton worked with us to build the perfect home for our family providing exceptional customer service."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Brian &amp; Cammie Heflin</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"It could not have been a more enjoyable experience… we certainly would build with Mark again."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Jene &amp; Tom Flood</span></div>
+          </div>
+
+          <!-- ===== Set B — exact duplicate for seamless loop ===== -->
+          <div class="test-card">
+            <p class="test-quote">"Mark has now built two houses and four townhouses for us… Everything runs smoothly, on time, and on budget… we were extremely satisfied with his work."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Sharon &amp; Jimmy Gallivan</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"Mark is incredibly professional, provides excellent customer service and a quality product. He is a trustworthy and patient individual and proved it many times throughout the process of building my home."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Ali &amp; Dan Greenwood</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"In the 20 years I have operated my architectural practice, it has become clear to me that the most important aspect of a quality project, outside of an open-minded client, is the builder."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Clay Nelson, C.A. Nelson Architecture Group</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"We made a great choice with Mark Clifton to build our home! He kept things on budget and on time, which was key. And he consulted closely with us each step of the way."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Tom &amp; Dianna Bowen</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"He worked with our architect and us to bring our vision to life and deserves most of the credit for our beautiful house, which D Magazine selected as one of the ten most beautiful homes in Dallas."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Jim &amp; Emmalee Mutrie</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"Mark and his team built our home with superior craftsmanship and exhibited the highest level of integrity in everything they did. He completed our project on time, on budget, and with craftsmanship that exceeded all expectations."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Lori &amp; Brian Pinto</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"We have had the distinct pleasure of working with Mark Clifton on several home projects over the last 5 years. From the beginning, Mark was very focused on detail and budget. His quality of work is excellent."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Patty &amp; James Huffines</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"Beth Ann and I had a fantastic experience with Mark Clifton on our remodel. He delivered on a very tight timeline and the quality was such that it won the ARC Award for 'Remodel of the Year' by DHome magazine!"</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Russell &amp; Beth Ann Huber</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"We had nothing but a positive and pleasant experience throughout the entire building process. Mark Clifton worked with us to build the perfect home for our family providing exceptional customer service."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Brian &amp; Cammie Heflin</span></div>
+          </div>
+          <div class="test-card">
+            <p class="test-quote">"It could not have been a more enjoyable experience… we certainly would build with Mark again."</p>
+            <div class="test-byline"><div class="test-rule"></div><span class="test-name">Jene &amp; Tom Flood</span></div>
+          </div>
+
+        </div><!-- /test-ticker -->
+      </div><!-- /test-ticker-wrap -->
+    </div><!-- /test-content -->
+  </section>
+
+  <!-- ==============================
+       COMMUNITIES
+  =============================== -->
+  <div id="communities">
+    <div class="container">
+      <span class="comm-kicker">Proudly Serving Dallas's Most Distinguished Communities</span>
+      <div class="comm-list">
+        <span class="comm-item">Park Cities</span>
+        <span class="comm-item">Preston Hollow</span>
+        <span class="comm-item">Bluffview</span>
+        <span class="comm-item">Devonshire</span>
+        <span class="comm-item">Uptown</span>
+        <span class="comm-item">Turtle Creek</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       CONTACT
+  =============================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info" data-aos="fade-right">
+          <span class="eyebrow">Get In Touch</span>
+          <h2 class="section-heading">Begin Your<br><em>Vision</em></h2>
+          <p class="contact-blurb">Trust is built with consistency. We take great pride in executing at an exceptional level — our legacy rests in consistent results across over 100 completed projects. Let's build something extraordinary together.</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-value"><a href="mailto:info@markcliftonhomes.com">info@markcliftonhomes.com</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Phone</div>
+                <div class="ci-value"><a href="tel:2145328989">214.532.8989</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Office</div>
+                <div class="ci-value">3419 Westminster #26<br>Dallas, Texas 75205</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-aos="fade-left" data-aos-delay="140" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="John" required>
+            </div>
+            <div class="field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(214) 000-0000">
+          </div>
+          <div class="field">
+            <label for="ptype">Project Type</label>
+            <select id="ptype">
+              <option value="" disabled selected>Select a project type</option>
+              <option>New Construction</option>
+              <option>Renovation</option>
+              <option>Commercial</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Tell Us About Your Vision</label>
+            <textarea id="message" placeholder="Describe your project, timeline, community, and any specific requirements…"></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="formSubmit">Send Message</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+  =============================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <img src="__originals/logo.png" alt="Mark Clifton Homes" style="height:58px;width:auto;border-radius:50%;display:block;margin-bottom:20px;">
+          <span class="footer-brand-name">MARK CLIFTON HOMES</span>
+          <p class="footer-tagline">A luxury building company with a defined mission — create unique, high quality homes designed with an exceptional level of detail. Our homes are custom in every sense of the word.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/markcliftonhomes" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/markcliftonhomes" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Mark</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#contact">New Construction</a></li>
+            <li><a href="#contact">Renovation</a></li>
+            <li><a href="#contact">Commercial</a></li>
+            <li><a href="#contact">Consultation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@markcliftonhomes.com">info@markcliftonhomes.com</a></li>
+            <li><a href="tel:2145328989">214.532.8989</a></li>
+            <li><a href="#">Fax: 214.750.8989</a></li>
+            <li><a href="#">3419 Westminster #26</a></li>
+            <li><a href="#">Dallas, Texas 75205</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bar">
+        <p class="footer-copy">© 2026 Mark Clifton Homes, Inc. All rights reserved. &nbsp;|&nbsp; Site by BytesByBlinken Media</p>
+        <p class="footer-award">Best Builder 2010 — 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================
+       SCRIPTS
+  =============================== -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // ---- AOS ----
+    AOS.init({ duration: 880, easing: 'ease-out-quart', once: true, offset: 72 });
+
+    // ---- Navbar scroll behaviour ----
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      nav.classList.toggle('solid', window.scrollY > 72);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ---- Mobile burger ----
+    const burger  = document.getElementById('navBurger');
+    const drawer  = document.getElementById('mobileDrawer');
+    let drawerOpen = false;
+
+    burger.addEventListener('click', () => {
+      drawerOpen = !drawerOpen;
+      burger.classList.toggle('open', drawerOpen);
+      drawer.classList.toggle('open', drawerOpen);
+      document.body.style.overflow = drawerOpen ? 'hidden' : '';
+    });
+
+    function closeDrawer() {
+      drawerOpen = false;
+      burger.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ---- Smooth scroll (offset for fixed nav) ----
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 76;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    // ---- Gallery lightbox ----
+    const lightbox = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lb-img');
+    const lbClose  = document.getElementById('lb-close');
+
+    document.querySelectorAll('.gp').forEach(item => {
+      item.addEventListener('click', () => {
+        const src = item.querySelector('img').src;
+        lbImg.src = src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ---- Contact form ----
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = document.getElementById('formSubmit');
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = 'var(--gold-dim)';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3500);
+    });
+
+    // ---- Testimonials ticker: compute exact 50% width so CSS translateX(-50%) is pixel-perfect ----
+    // The CSS animation uses translateX(-50%) which is 50% of the element's own scrollWidth —
+    // since Set A and Set B are identical, scrolling exactly -50% loops perfectly.
+    // No JS override needed; the CSS handles it natively.
+  </script>
+</body>
+</html>
