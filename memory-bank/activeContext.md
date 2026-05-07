@@ -34,6 +34,7 @@
 - `index-editorial.html` — client option C: editorial / magazine rhythm (see plan). Testimonials as static grid (same 10 quotes). Stats embedded in hero copy column.
 - `index-architectural.html` — client option D: structural / architectural rhythm. Testimonials as vertical stack. Stats in hero plinth beside headline.
 - **Hosting filenames:** dark classic is `index-dark.html`; hub (design options menu) is `index.html` (replaced prior `variants.html`). Hub links to `index-dark.html` for Option A.
+- **Hub redesign:** `index.html` restyled as agency client presentation—dark hero (Fraunces + Outfit), top bar, lettered option cards, `<details>` for technical hosting note, professional footer.
 
 ### Next Steps / Open Questions
 - **Hosting:** GitHub repo → Coolify on VPS; static root deploy; include `__originals/` (see `techContext.md` → Deployment)

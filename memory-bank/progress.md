@@ -25,6 +25,11 @@
 - [x] Updated hub internal link for Option A to `index-dark.html`
 - [x] Documented deployment: **Coolify + VPS + GitHub repo** in `techContext.md`
 
+## 2026-05-07 — Hub presentation refresh
+
+### Done
+- [x] Redesigned `index.html` (client concept picker): agency-style hero, BytesByBlinken top bar, Fraunces + Outfit, card grid with option letters, collapsible dev/hosting note
+
 ### Pending
 - [ ] Client review of design
 - [ ] Possible logo placement once `53eb3d45` PNG identity is confirmed
